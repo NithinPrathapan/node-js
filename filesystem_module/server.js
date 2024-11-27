@@ -7,3 +7,5 @@ fs.readFile("demo.txt", "utf8", (err, data) => {
   }
   console.log("File content:", data);
 });
+
+console.log('hello world!');
