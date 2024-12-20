@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Add todo</h1>
+   
+    <form action="/add"  method="POST" >
+        <input type="text" name="task" required >
+        <button type="submit">ADD</button>
+    </form>
+
+    <!-- display the todo list under the form  -->
+
+     <!-- <% %> used to run the javacsript code on html page -->
+      <!--<%= %> used to take  values from the javascript  -->
+<% todos.forEach((todo)=>{ %>
+   <div style="display: flex; align-items: center; justify-content: center; gap: 4px; border: 2px solid black; width: 400px; margin-top: 1rem;">
+    <p style="background: #000 ; color: white;  padding: 8px 20px ; width: 150px; text-align: center; border-radius: 5px;"> 
+        <%= todo.task %>
+    </p>
+    <form action="/delete/<%= todo._id %> " method="post">  
+          <button type="submit" >Delete</button>
+   </form>
+   </div>
+   
+<% }) %>
+
+   
+</body>
+</html>
